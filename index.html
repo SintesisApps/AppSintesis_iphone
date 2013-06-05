@@ -21,14 +21,22 @@ function deteccion(){
 		document.getElementById('conte').style.background = '#603';*/
 	}
 }
-
+//http://www.webserveis.com/134/detectar-iphones-y-ipods-usando-javascript/
 //if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
 if(navigator.userAgent.match(/iPod/i)) {
-alert('1');
-    if (document.cookie.indexOf("iphone_redirect=false") == -1) {
+alert('ipod');
+    /*if (document.cookie.indexOf("iphone_redirect=false") == -1) {
 		alert('2');
         window.location = "index2.html";
-    }
+    }*/
+}
+else if(navigator.userAgent.match(/iPhone/i)) {
+alert('ipahone');
+    
+}
+else if(navigator.userAgent.match(/iPad/i)) {
+alert('ipad');
+   
 }
 
 
