@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Documento sin título</title>
+<title>Documento sin título</title> 
 </head>
 <script>
 
@@ -21,7 +21,16 @@ function deteccion(){
 		document.getElementById('conte').style.background = '#603';*/
 	}
 }
-deteccion();
+
+//if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+if(navigator.userAgent.match(/iPod/i)) {
+alert('1');
+    if (document.cookie.indexOf("iphone_redirect=false") == -1) {
+		alert('2');
+        window.location = "Sintesis/index.html";
+    }
+}
+
 
 </script>
 <body>
