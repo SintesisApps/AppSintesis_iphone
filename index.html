@@ -43,7 +43,8 @@
 		}
 		alert("conexion:"+checkConnection());
 	*/
-			if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+			if(navigator.userAgent.match(/iPod/i)) {
+				alert('ipod');
 				document.addEventListener("deviceready", function(){
 					//mantenemos el loding por 7 segundo
 					slidePrincipal();
@@ -56,6 +57,7 @@
 
 			}
 			else if(navigator.userAgent.match(/iPad/i)) {
+				alert('ipad');
 				document.addEventListener("deviceready", function(){
 					slidePrincipal();
 					slideMiniatura();
