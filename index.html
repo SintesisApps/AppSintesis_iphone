@@ -127,21 +127,31 @@
 			{
 				//$('#cont_slideprincipal').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-					
+					 $.ajax({
+							type: "POST",
+							url: "http://166.78.193.53/RecursosApp/minios/php/slideprincipal_ip.php",
+							data: "",
+							cache: false,
+								success: function(message)
+								{	
+							
+									$('#cont_slideprincipal').html(message);	
+								}
+					});
 					
 				}
 				else if(navigator.userAgent.match(/iPad/i)) {
 					 $.ajax({
 					
-					type: "POST",
-					url: "http://166.78.193.53/RecursosApp/ios/php/slideprincipal.php",
-					data: "",
-					cache: false,
-					success: function(message)
-					{
-					//setInterval($('#cont_slideprincipal').html(message),5000);
-					$('#cont_slideprincipal').html(message)
-					}
+							type: "POST",
+							url: "http://166.78.193.53/RecursosApp/ios/php/slideprincipal.php",
+							data: "",
+							cache: false,
+							success: function(message)
+							{
+							//setInterval($('#cont_slideprincipal').html(message),5000);
+							$('#cont_slideprincipal').html(message)
+							}
 					
 					});
 				}
