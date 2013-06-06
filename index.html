@@ -33,7 +33,7 @@
 <script type="text/javascript">
 
 	$(document).ready(function(e){
-	document.addEventListener("deviceready", function(){
+	
 
 		/*
 		if(checkConnection()== "WiFi connection")
@@ -44,25 +44,32 @@
 		alert("conexion:"+checkConnection());
 	*/
 			if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-				slidePrincipal();
-				slideVertical();
-				CargarNoticiasHomeGal();
-				galeria_video('nacionales');
+				document.addEventListener("deviceready", function(){
+					//mantenemos el loding por 7 segundo
+					slidePrincipal();
+					slideVertical();
+					CargarNoticiasHomeGal();
+					galeria_video('nacionales');
+					setInterval(function(){document.getElementById("cargando").style.display='none'},14000);
+				
+				});
 
 			}
 			else if(navigator.userAgent.match(/iPad/i)) {
-				slidePrincipal();
-				slideMiniatura();
-				slideVertical();
-				galeria_video('nacionales');	
-				minuto_minuto();
-				CargarNoticiasHomeGal();
-			}
-		
-		setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
+				document.addEventListener("deviceready", function(){
+					slidePrincipal();
+					slideMiniatura();
+					slideVertical();
+					galeria_video('nacionales');	
+					minuto_minuto();
+					CargarNoticiasHomeGal();
+					setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 		
 	
-	});	
+				});	
+			}
+		
+		
 });
 
 
@@ -118,31 +125,21 @@
 			{
 				//$('#cont_slideprincipal').html('<img src="http://166.78.193.53/RecursosApp/ios/imagenes/loading.gif" />');
 				if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-					 $.ajax({
-							type: "POST",
-							url: "http://166.78.193.53/RecursosApp/minios/php/slideprincipal_ip.php",
-							data: "",
-							cache: false,
-							success: function(message)
-							{	
-						
-								$('#cont_slideprincipal').html(message);	
-							}
-						});
+					
 					
 				}
 				else if(navigator.userAgent.match(/iPad/i)) {
 					 $.ajax({
 					
-							type: "POST",
-							url: "http://166.78.193.53/RecursosApp/ios/php/slideprincipal.php",
-							data: "",
-							cache: false,
-							success: function(message)
-							{
-							//setInterval($('#cont_slideprincipal').html(message),5000);
-							$('#cont_slideprincipal').html(message)
-							}
+					type: "POST",
+					url: "http://166.78.193.53/RecursosApp/ios/php/slideprincipal.php",
+					data: "",
+					cache: false,
+					success: function(message)
+					{
+					//setInterval($('#cont_slideprincipal').html(message),5000);
+					$('#cont_slideprincipal').html(message)
+					}
 					
 					});
 				}
