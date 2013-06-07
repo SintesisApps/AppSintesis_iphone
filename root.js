@@ -21,6 +21,7 @@ alert("csd");
        // $('#deviceProperties').html(s);
 
         var platform = device.platform;
+		var p = navigator.platform;
 		
 /*        if(platform.search("iPad") != -1)
 */		if( p === 'iPad' )
