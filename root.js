@@ -21,13 +21,13 @@
         var platform = device.platform;
         if(platform.search("iPad") != -1)
         {
-           // alert("ipad");
+            alert("ipad");
             location.href="index_k.html";
         }
 
         if(platform.search("iPhone") != -1)
         {
-            //alert("iphone");
+            alert("iphone");
             location.href="index_m.html";
         }
 
