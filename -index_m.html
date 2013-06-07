@@ -6,21 +6,21 @@
 <!--<meta content="width=device-width, initial-scale=1.0, minimum-scale=.5, maximum-scale=1.0, user-scalable=yes" name="viewport" />
 --><meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=480, target-densitydpi=device-dpi" />
 
-<!--<link href="general.css" rel="stylesheet">
-<link href="css/transiciones.css" rel="stylesheet">
-<link href="css/alerta.css" rel="stylesheet" type="text/css" />
+<link href="general_ipod.css" rel="stylesheet">
+<link href="css_ipod/transiciones.css" rel="stylesheet">
+<link href="css_ipod/alerta.css" rel="stylesheet" type="text/css" />
+<!--
+<link href="http://166.78.193.53/RecursosApp/minios/general_ipod.css" rel="stylesheet">
+<link href="http://166.78.193.53/RecursosApp/minios/css_ipod/transiciones.css" rel="stylesheet">
+<link href="http://166.78.193.53/RecursosApp/minios/css_ipod/alerta.css" rel="stylesheet" type="text/css" />
 -->
-<link href="http://166.78.193.53/RecursosApp/minios/general.css" rel="stylesheet">
-<link href="http://166.78.193.53/RecursosApp/minios/css/transiciones.css" rel="stylesheet">
-<link href="http://166.78.193.53/RecursosApp/minios/css/alerta.css" rel="stylesheet" type="text/css" />
-
 <script src="phonegap.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
 <!--Slide-->
 <link href="slide/royalslider.css" rel="stylesheet">
 <script type="text/javascript" async src="slide/ga.js"></script>
-<script src="slide/jquery.royalslider.min.js?v=9.3.5"></script>
+<script src="slide/jquery.royalslider.min.js?v=9.3.5"></script>  
 
 <!--Slide-->
 	<link href="js/galeria/photoswipe.css" type="text/css" rel="stylesheet" />
@@ -70,8 +70,7 @@
 				slidePrincipal();
 				slideVertical();
 				CargarNoticiasHomeGal();
-				galeria_video('nacionales');
-				setInterval(function(){document.getElementById("cargando").style.display='none'},14000);
+				setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 				
 					});
 				
@@ -159,22 +158,18 @@
 			
 			function galeria_video(plaza)
 			{
-				document.getElementById("cargando").style.display='';
 
-					$.ajax({
-						type: "POST",
-					url: "http://166.78.193.53/RecursosApp/minios/php/galeria_video.php",
-					//data: "",
-					data: "plaza="+plaza,
-					cache: false,
-					success: function(message)
-					{	
-					$('.contvideogaleria').html(message);
-					}
-					});
-				setInterval(function(){document.getElementById("cargando").style.display='none'},16000);
-				
-					
+				$.ajax({
+					type: "POST",
+				url: "http://166.78.193.53/RecursosApp/minios/php/galeria_video.php",
+				//data: "",
+				data: "plaza="+plaza,
+				cache: false,
+				success: function(message)
+				{	
+				$('.contvideogaleria').html(message);
+				}
+				});
 			}
 
 			
@@ -240,7 +235,7 @@
 		slideVertical2();
 		slidePrincipal();
 		galeriaImagenes();
-		galeria_video('nacionales');	
+		galeria_video();
 		CargarNoticiasHomeGal();	
 		
 		
@@ -261,7 +256,7 @@
 				}
 				});
 			}
-		setInterval(function(){document.getElementById("cargando").style.display='none'},14000);
+		setInterval(function(){document.getElementById("cargando").style.display='none'},12000);
 		
 	} 
 	
@@ -473,7 +468,7 @@ function LeerNota(id)
   <!--Slide Miniaturas--> 
   
   <!--Slide Vertical-->
-  <div class="DivVertical" id="vertical_home">
+  <div class="DivVertical">
     <div  class="ContenedorSlideVertical" id="content_slideVertical" >
      <!--
         se carga de php
@@ -619,8 +614,8 @@ function LeerNota(id)
     <div class="logo1"> <img src="imagenes/logo.png" height="25"> </div>
     
   </div>
-  <div style="height:95%; width:100%; padding-top:0px; padding-bottom:0px;">
-    <div class="contNav" style="width:100%; height:100%; background:url(imagenes/mapa.jpg) no-repeat; background-size:100% 100%; background-position:center center; margin-top:-20px;">
+  <div style="height:100%; width:100%; padding-top:0px; padding-bottom:0px;">
+    <div class="contNav" style="width:100%; height:100%; background:url(imagenes/mapa.jpg) no-repeat; background-size:100%; background-position:center center; margin-top:-20px;">
     </div>
  
   </div>
@@ -962,6 +957,7 @@ function ImprimirImpresoTodas(plaza)
   <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%'), cargar_seccion('tecno');">
   <div class="panelSeccionTitulo" style="background-image:url(imagenes/iconos/azules/tecno@2x.png);"> Tecno </div>
   </a>
+  <div class="panelSeccionSpacer"> </div>
   <div class="paneSeccionEdicion"> Estados </div>
   <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%'), CargarNoticiasPlaza('puebla');">
   <div class="panelSeccionTitulo"> Puebla </div>
@@ -986,6 +982,7 @@ function ImprimirImpresoTodas(plaza)
   <a href="#secciones" onClick="$('#panelSecciones').css('left','-250%'), CargarNoticiasPlaza('yucatan');">
   <div class="panelSeccionTitulo"> Yucatán </div>
   </a>
+  <div class="panelSeccionSpacer"> </div>
   <a class="closeSeccion" href="javascript:;" onClick="$('#panelSecciones').css('left','-250%');"></a> </div>
 <!--Panel de Secciones--> 
 
