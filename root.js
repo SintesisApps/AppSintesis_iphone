@@ -31,11 +31,17 @@ alert("csd");
         }
 
 /*        if(platform.search("iPhone") != -1)
-*/		if(  p === 'iPod' )
+*/		else if(  p === 'iPod' )
+        {
+            alert("ipod");
+            location.href="index_m.html";
+        }
+		else if(  p === 'iPhone' )
         {
             alert("iphone");
             location.href="index_m.html";
         }
+		
 
     }
 
