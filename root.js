@@ -11,6 +11,7 @@ alert("csd");
 
     function init()
     {
+		alert("entra");
         var s = 'Device Name: '     + device.name     + '<br />' +
                             'Device PhoneGap: ' + device.phonegap + '<br />' +
                             'Device Platform: ' + device.platform + '<br />' +
