@@ -21,13 +21,16 @@ alert("csd");
        // $('#deviceProperties').html(s);
 
         var platform = device.platform;
-        if(platform.search("iPad") != -1)
+		
+/*        if(platform.search("iPad") != -1)
+*/		if( p === 'iPad' )
         {
             alert("ipad");
             location.href="index_k.html";
         }
 
-        if(platform.search("iPhone") != -1)
+/*        if(platform.search("iPhone") != -1)
+*/		if(  p === 'iPod' )
         {
             alert("iphone");
             location.href="index_m.html";
