@@ -3,6 +3,7 @@
 
 (function ($)
 { //=================================================================================
+alert("csd");
     $(document).ready(function()
     {
         $(document).bind("deviceready", init);
