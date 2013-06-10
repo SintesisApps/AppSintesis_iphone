@@ -34,7 +34,7 @@ alert("csd");
 */		else if(  p === 'iPod' )
         {
             alert("ipod");
-            location.href="index_m.html";
+            location.href="index_k.html";
         }
 		else if(  p === 'iPhone' )
         {
